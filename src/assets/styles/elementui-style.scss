@@ -1,0 +1,267 @@
+/* 覆盖elementUI默认样式 */
+@charset "UTF-8";
+
+/* 改变table固定栏的阴影 */
+#app .el-table__fixed,
+.el-table__fixed-right {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12);
+}
+
+.el-button {
+    border: none;
+}
+
+/* 将分页数字 去掉粗体 */
+#app .el-pager li {
+    color: #606266;
+    font-weight: normal;
+}
+
+#app .el-pager li.active {
+    color: #409EFF;
+}
+
+/* 设置所有禁用状态下 表格中的form/input字体 */
+#app .el-input.is-disabled .el-input__inner {
+    color: #606266;
+}
+
+/* 覆盖红色星号 */
+#app .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 修改table默认字体大小 */
+#app .el-table--mini,
+.el-table--small,
+.el-table__expand-icon {
+    font-size: 13px;
+}
+
+/* 修改form表单 行与行之间的间隔 */
+#app .el-form-item--mini.el-form-item,
+.el-form-item--small.el-form-item,
+.el-dialog__wrapper .el-form-item--mini.el-form-item,
+.el-dialog__wrapper .el-form-item--small.el-form-item {
+    margin-bottom: 10px;
+}
+
+.el-dialog__wrapper .el-form-item__label {
+    font-size: 13px;
+}
+
+/* 修改form表单 内容div与头部、脚步的间距 */
+#app .el-dialog__body {
+    padding: 10px;
+}
+
+/* 修改form表单 头部一个灰色背景 */
+#app .el-dialog__header {
+    background-color: #eee;
+}
+
+/* 修改form表单 头部字体和行高 */
+#app .el-dialog__title {
+    line-height: 20px;
+    font-size: 16px;
+}
+
+/* 修改form表单 字体大小 */
+#app .el-form-item__label {
+    font-size: 13px;
+}
+
+
+/* 表格头部背景色 */
+#app .el-table thead th {
+    background-color: #f8f9fa;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#app .el-table tbody td {
+    font-size: 13px;
+}
+
+
+/* 让表格里面的子表格  保持父表格一样宽度和大小 */
+#app .el-table__expanded-cell[class*=cell] {
+    padding: 0 0 0 47px;
+}
+
+/* 展开父表格---的符号，由三角形改成 + 号 */
+#app .el-table__expand-icon .el-icon-arrow-right:before {
+    content: '+';
+    font-size: 20px;
+    color: #0c4a95;
+    position: relative;
+    top: -5px;
+}
+
+#app .el-table__expand-icon--expanded {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+#app .el-table__expand-icon--expanded .el-icon-arrow-right:before {
+    content: '-';
+    font-size: 20px;
+    color: #0c4a95;
+    position: relative;
+    top: -5px;
+}
+
+/* 改变表格选中行颜色 */
+#app .current-row>td {
+    background-color: #cfecfe;
+}
+
+/* 表格斑马条纹颜色*/
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+    background: #f2f5f8;
+}
+
+/* 固定表格头高度为36px 内容行高度为38px */
+#app .el-table__header tr,
+#app .el-table__header th {
+    padding: 0;
+    height: 36px;
+    line-height: 36px;
+    color: #606266;
+}
+
+#app .el-table__body-wrapper tr,
+#app .el-table__body-wrapper td,
+#app .el-table__fixed-body-wrapper tr,
+#app .el-table__fixed-body-wrapper td {
+    padding: 0;
+    height: 38px;
+    line-height: 38px;
+}
+
+#app .el-table--mini td,
+.el-table--mini th {
+    height: 38px;
+    line-height: 38px;
+    padding: 0;
+}
+
+/* 改变下拉字体大小*/
+.el-select-dropdown__item {
+    font-size: 13px;
+}
+
+/* 下拉组件字体大小*/
+#app .el-select-dropdown__item {
+    font-size: 13px;
+}
+
+/* 穿梭栏 字体大小 */
+#app .el-checkbox__label {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/* 设置dialog的头部和底部的高度 */
+.el-dialog__header {
+    border-top: solid 3px #2b65a0;
+    padding: 10px 20px 10px;
+    border-radius: 2px;
+}
+
+.el-dialog__footer {
+    border-top: solid 1px #eee;
+    padding: 10px 20px 10px;
+}
+
+.el-dialog__headerbtn {
+    top: 15px;
+}
+
+/* 单选框有 */
+.el-table__row td:nth-of-type(1) .el-radio__label {
+    display: none;
+}
+
+.el-radio__inner {
+    height: 16px;
+    width: 16px;
+}
+
+.el-radio__inner::after {
+    width: 6px;
+    height: 6px;
+}
+
+
+
+/* 设置表格中的input/select无边框 背景颜色与表格保持一致 */
+/* is-view是查看表格的状态下样式，span-bg表示表格列中 span元素的样式	*/
+.table-form {
+    table {
+        .current-row {
+            .td-form {
+                .el-input__inner {
+                    background: transparent !important;
+                    transition: all 0s !important;
+                }
+            }
+        }
+
+        .td-form {
+            .el-input__inner {
+                background: transparent;
+                border: none;
+            }
+        }
+
+        .el-table__row--striped {
+            &:hover {
+                .td-form {
+                    .el-input__inner {
+                        background: #f5f7fa;
+                    }
+                }
+            }
+
+            .td-form {
+                .el-input__inner {
+                    background: #f2f5f8;
+                }
+            }
+        }
+    }
+
+    .is-view {
+        tr {
+            .span-bg {
+                background: #f5f7fa;
+            }
+        }
+
+        &:hover {
+            .span-bg {
+                background: #f5f7fa;
+            }
+        }
+    }
+
+    tr {
+        .span-bg {
+            padding-left: 10px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: all 0s;
+            background: #fff;
+            transition: all 0s;
+        }
+
+        &:hover {
+            .span-bg {
+                background: #f5f7fa;
+            }
+        }
+    }
+}

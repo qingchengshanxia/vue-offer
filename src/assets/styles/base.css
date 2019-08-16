@@ -1,0 +1,106 @@
+/* 框架重置样式 */
+@charset "UTF-8";
+/*css 初始化 */
+*{outline: none!important; }
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,div,i,a,img { margin:0; padding:0; box-sizing: border-box;}
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+body {
+    /* font:12px/150% Arial,Verdana,"\5b8b\4f53"; */
+    font-size: 13px;
+    color:#606266;
+    background:#fff;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+}
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;color:#303133;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    zoom: 1;
+}
+.fullscreen {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+}
+.w {  /*版心 提取 */
+    width: 1210px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right !important;
+}
+.al {
+    text-align:left !important;
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+
+
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar,
+::-webkit-scrollbar,
+::-webkit-scrollbar,
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track{
+    /*  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
+    width:6px;
+    height:6px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb{
+    width: 6px;
+    height:6px;
+    border-radius: 6px;
+    /*  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
+    background-color: #C8C9CC;
+}

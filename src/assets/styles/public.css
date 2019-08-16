@@ -1,0 +1,61 @@
+/* 共用、公共----类名 */
+@charset "UTF-8";
+
+
+/* 分页条 居右 */
+.pagination {
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+/* 正确-绿 */
+.green {
+	color: #67c23a;
+}
+.bg-green {
+	background: #67c23a;
+}
+
+/* 错误-红 */
+.red {
+	color: #f56c6c;
+}
+.bg-red {
+	background: #f56c6c;
+}
+
+/* 必填星号样式 */
+.required {
+	color: #f56c6c;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	display: inline;
+	margin-right: 4px;
+}
+
+.ellipsis{
+	text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @clamp;
+    -webkit-box-orient: vertical; 
+}
+
+/* 文字两端对齐 */
+.justify {
+    margin: 10px 0; /* 自定义修改 */
+    width: 100px;/* 自定义修改 */
+    border: 1px solid red;
+    text-align: justify;
+    text-align-last:justify
+}
+.justify:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+

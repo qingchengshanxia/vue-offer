@@ -1,0 +1,40 @@
+/* 统一所有的媒体查询样式 */
+/* 命名采用  小驼峰命名法 */
+@charset "UTF-8";
+
+
+/*屏幕大于13寸时*/
+@media screen and (max-width: 1500px) {
+	body {
+		font-size: 13px;
+	}
+    .header-box {/*一级菜单标题字体大小*/
+      .header-menu {
+        ul {
+          li {
+            font-size: 16px !important;
+          }
+        }
+      }
+    }
+
+    #app {
+		.el-table {
+			thead {
+				th {
+					font-size: 14px;
+				}
+			}
+			tbody {
+				td {
+					font-size: 13px;
+				}
+			}
+		}
+		.el-menu-item {
+			font-size: 14px;
+		}
+	} 
+}
+
+

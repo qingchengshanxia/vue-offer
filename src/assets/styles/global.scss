@@ -1,0 +1,110 @@
+
+/* 这里设定整个框架都用到的公共样式---变量 */
+/* 命名采用  小驼峰命名法 */
+@charset "UTF-8";
+/* *
+ *
+ * 公共样色设定 color
+ *
+ *
+ */
+    $mainColor:#1976d2;  //框架主色；
+
+    $textColor1:#303133;  //主要文字颜色   ----标题文字颜色
+    $textColor2:#606266;  //常规文字颜色   ----一般文字颜色
+    $textColor3:#909399;  //次要文字颜色   ----辅助文字颜色
+    $textColor4:#C0C4CC;  //占位文字颜色   ----占位文字颜色
+
+
+    $borderColor1:#DCDFE6;  //一级边框颜色   ----表格边框颜色
+    $borderColor2:#E4E7ED;  //二级边框颜色   ----
+    $borderColor3:#EBEEF5;  //三级边框颜色   ----
+    $borderColor4:#F2F6FC;  //四级边框颜色   ----
+
+
+    $shadowColor1:0 2px 20px 0 rgba(0, 0, 0, 0.1);  //卡片、盒子阴影      
+
+    
+
+
+ /* *
+  *
+  * 公共font-size设定
+  *
+  *
+  */
+ 
+
+
+
+ /* *
+  *
+  * 混合复用 块样式用 mixin设定
+  *
+  *
+  */
+ 
+ 
+ /* 
+  *
+  *文本溢出显示省略号
+  * 示例：@include ellipsis(200px)
+  *
+  *
+  */
+ @mixin ellipsis($width){
+    max-width: $width;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+ } 
+
+// 给表格加色 左边是灰色底查看文字，右边是白色底输入框
+ @mixin old-table() {
+     width: 100%;
+     table {
+         width: 90%;
+     }
+     table,td {
+         border:solid 1px #ddd;
+     }
+     td {
+         border-collapse:collapse;
+         padding: 0;
+         margin:0;
+         span {
+             height: 36px;
+             line-height:36px;
+             display: block;
+             margin:0;
+             overflow: hidden;
+         }
+         &:nth-of-type(1),&:nth-of-type(3){
+             width:20%;
+             span {
+                 max-width: 250px;
+                 text-align: right;
+                 background: #eee;
+                 padding: 0 10px;
+             }
+         }
+         &:nth-of-type(2),&:nth-of-type(4){
+             width:30%;
+             span {
+                 max-width: 300px;
+                 text-align:left;
+             }
+         }
+     }
+ }
+ //除去 Input组件的边框
+ @mixin no-border(){
+  .el-input {
+      border:none;
+  }
+  .el-input__inner {
+      border:none;
+      height: 36px;
+      line-height:36px;
+  }
+ }
