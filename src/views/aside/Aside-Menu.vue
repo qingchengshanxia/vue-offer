@@ -3,7 +3,7 @@
  * @Author: lhl
  * @Date: 2019-08-14 16:37:55
  * @LastEditors: lhl
- * @LastEditTime: 2019-08-16 18:57:41
+ * @LastEditTime: 2019-08-16 20:20:18
  -->
     
 <template>
@@ -103,7 +103,7 @@
         <!-- 只有一级菜单的 -->
         <el-menu-item
           v-for="(nav1, index1) in menus"
-          v-else
+          v-if="!!!nav1.children.length"
           :index="switchString(nav1.meta.id)"
           :key="nav1.meta.id"
           :class="{ 'one-menu': true }"
@@ -192,7 +192,7 @@ export default {
       //父组件触发，展开菜单
       this.openeds = [index + ""];
     },
-    changeTitle(item,type) {
+    changeTitle(item, type) {
       // 点击菜单目录、添加标签
       /**
        *
@@ -206,7 +206,7 @@ export default {
        * ------3，在router中添加路径；
        *
        */
-      if(type == 1){
+      if (type == 1) {
         this.searchMenuVal = "";
         this.searchMenu();
       }
@@ -307,8 +307,21 @@ export default {
       }
     }
 
-    this.menus = newMenu;
-    this.oldmenu = newMenu;
+    let finalMenu = [];
+    for (let i = 0; i < newMenu.length; i++) {
+      if (
+        newMenu[i].children.length == 1 &&
+        newMenu[i].children[0].children.length == 1
+      ) {
+        finalMenu.push(newMenu[i].children[0].children[0]);
+      } else if (newMenu[i].children.length == 1) {
+        finalMenu.push(newMenu[i].children[0]);
+      } else {
+        finalMenu.push(newMenu[i]);
+      }
+    }
+    this.menus = finalMenu;
+    this.oldmenu = finalMenu;
   },
   beforemount() {},
   mounted() {},
@@ -421,7 +434,7 @@ export default {
         background: rgb(38, 52, 69);
       }
     }
-    &.is-opened {
+    &.is-active.is-opened {
       > .el-submenu__title {
         // color: rgb(255, 208, 75);
         background: rgb(11, 62, 110);
@@ -435,6 +448,18 @@ export default {
           width: 4px;
           background: rgba(30, 159, 255, 1);
         }
+      }
+    }
+    &.el-menu-item.is-active {
+      background: rgb(11, 62, 110);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 4px;
+        background: rgba(30, 159, 255, 1);
       }
     }
   }
