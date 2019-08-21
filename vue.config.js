@@ -35,6 +35,7 @@ module.exports = {
     // 将组件内的 CSS 提取到一个单独的 CSS 文件 (只用在生产环境中)
     // 也可以是一个传递给 `extract-text-webpack-plugin` 的选项对象
     // extract: true,//打包时改成true   注销这一行，即可css修改热更新
+    extract: process.env.NODE_ENV === "production" ?true:false,//打包时改成true   注销这一行，即可css修改热更新
 
     // 是否开启 CSS source map？
     sourceMap: false,

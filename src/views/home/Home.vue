@@ -3,7 +3,7 @@
  * @Author: lhl
  * @Date: 2019-08-14 16:37:55
  * @LastEditors: lhl
- * @LastEditTime: 2019-08-16 17:56:36
+ * @LastEditTime: 2019-08-21 11:01:09
  -->
 <template>
   <el-container
@@ -150,7 +150,7 @@ export default {
       }
 
     },
-    handleClose(tag, index) {
+    handleClose(tag, indexnum) {
       //删除标签的同时，点击并显示该标签前一个标签页
       let curtag = '';
       let curMenuId = this.curMenuId;
@@ -158,7 +158,7 @@ export default {
       if (tag.id == curMenuId) {
         //删除的标签，是当前活跃的标签
         this.isNoClickTag = false;
-        let index = '';
+        let index = 0;
         if (this.tags.indexOf(tag) > 0) {
           //删除的标签，不是第一个标签
           if (this.tags.indexOf(tag) != this.tags.length - 1) {

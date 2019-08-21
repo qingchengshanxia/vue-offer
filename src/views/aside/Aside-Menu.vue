@@ -3,7 +3,7 @@
  * @Author: lhl
  * @Date: 2019-08-14 16:37:55
  * @LastEditors: lhl
- * @LastEditTime: 2019-08-16 20:20:18
+ * @LastEditTime: 2019-08-21 11:10:56
  -->
     
 <template>
@@ -178,8 +178,8 @@ export default {
     },
     initCurmenu() {
       //页面首次渲染，初始化显示被选中的菜单
-      this.defaultAactiveIndex = this.menus[0].children[0].id + "-"; //页面的id+'-'
-      this.changeTitle(this.menus[0].children[0].meta);
+      this.defaultAactiveIndex = this.menus[0].children.length>0?(this.menus[0].children[0].id + "-"):this.menus[0].meta.id; //页面的id+'-'
+      this.changeTitle(this.menus[0].children.length>0?this.menus[0].children[0].meta:this.menus[0].meta);
     },
     switchTargetMenu(tag) {
       //点击标签项，切换对应菜单
